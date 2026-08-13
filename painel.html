@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel - Portal Acadêmico</title>
+
+    <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+
+            width: 100%;
+            min-height: 100vh;
+
+            background-color: #000000;
+
+            color: #f2f2f2;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow-x: hidden;
+
+            padding: 20px;
+
+        }
+
+
+        /* =========================
+           CARD DO PAINEL
+        ========================= */
+
+        .card {
+
+            width: 100%;
+            max-width: 600px;
+
+            background-color: #000000;
+
+            padding: 50px 45px;
+
+            border: 1px solid #252525;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.5);
+
+            text-align: center;
+
+        }
+
+
+        /* =========================
+           SÍMBOLO
+        ========================= */
+
+        .symbol {
+
+            font-size: 34px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* =========================
+           TÍTULO
+        ========================= */
+
+        h1 {
+
+            color: #f2f2f2;
+
+            font-size: 30px;
+
+            font-weight: normal;
+
+            letter-spacing: 4px;
+
+            line-height: 1.2;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* =========================
+           TEXTO
+        ========================= */
+
+        p {
+
+            color: #888888;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        /* =========================
+           BOTÃO
+        ========================= */
+
+        button {
+
+            width: 100%;
+
+            height: 50px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            background-color: #f2f2f2;
+
+            color: #000000;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+        button:hover {
+
+            background-color: #cccccc;
+
+        }
+
+        button:active {
+
+            transform: scale(0.98);
+
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+
+            margin-top: 30px;
+
+            color: #666666;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 599px) {
+
+            body {
+
+                padding: 15px;
+
+            }
+
+            .card {
+
+                width: 100%;
+
+                padding: 35px 25px;
+
+            }
+
+            .symbol {
+
+                font-size: 30px;
+
+            }
+
+            h1 {
+
+                font-size: 25px;
+
+                letter-spacing: 3px;
+
+            }
+
+            p {
+
+                font-size: 14px;
+
+            }
+
+            button {
+
+                height: 48px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="card">
+
+
+        <div class="symbol">
+            ♱
+        </div>
+
+
+        <h1>
+            Bem-vindo!
+        </h1>
+
+
+        <p>
+            Você acessou o Portal Acadêmico.
+            <br>
+            Esta é a área inicial do sistema.
+        </p>
+
+
+        <button onclick="logout()">
+            SAIR
+        </button>
+
+
+        <footer>
+            © 2026 Universidade Virtual
+        </footer>
+
+
+    </div>
+
+
+    <script>
+
+        function logout() {
+
+            window.location.href = "index.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

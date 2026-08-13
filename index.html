@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Zaya's Torment - Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+
+            background-color: #000000;
+            color: #f2f2f2;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow-x: hidden;
+        }
+
+
+
+        .login-container {
+            width: 100%;
+            max-width: 430px;
+
+            min-height: 100vh;
+
+            padding: 40px 25px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+
+        .logo {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .symbol {
+            font-size: 34px;
+
+            margin-bottom: 15px;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+
+            font-weight: normal;
+
+            letter-spacing: 4px;
+
+            line-height: 1.2;
+
+            text-transform: uppercase;
+        }
+
+        .logo p {
+            margin-top: 12px;
+
+            color: #888888;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        .form-group {
+            width: 100%;
+
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #d0d0d0;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+        }
+
+        .form-group input {
+            width: 100%;
+
+            height: 50px;
+
+            padding: 0 15px;
+
+            background-color: #111111;
+
+            border: 1px solid #333333;
+
+            border-radius: 5px;
+
+            color: #ffffff;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #aaaaaa;
+        }
+
+        .form-group input::placeholder {
+            color: #666666;
+        }
+
+
+        .login-button {
+            width: 100%;
+
+            height: 50px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            background-color: #f2f2f2;
+
+            color: #000000;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .login-button:hover {
+            background-color: #cccccc;
+        }
+
+        .login-button:active {
+            transform: scale(0.98);
+        }
+
+
+        #mensagem {
+            margin-top: 20px;
+
+            text-align: center;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            min-height: 18px;
+        }
+
+
+        .divider {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 30px 0;
+
+            color: #444444;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background-color: #292929;
+        }
+
+
+        footer {
+            text-align: center;
+
+            color: #666666;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+        }
+
+
+        @media (min-width: 600px) {
+
+            body {
+                background-color: #111111;
+            }
+
+            .login-container {
+                min-height: auto;
+
+                background-color: #000000;
+
+                padding: 50px 45px;
+
+                border: 1px solid #252525;
+
+                border-radius: 8px;
+
+                box-shadow:
+                    0 15px 40px
+                    rgba(0, 0, 0, 0.5);
+            }
+
+        }
+
+
+        @media (max-width: 599px) {
+
+            body {
+                padding: 0;
+            }
+
+            .login-container {
+                width: 100%;
+
+                min-height: 100vh;
+
+                padding: 35px 25px;
+            }
+
+            .logo {
+                margin-bottom: 35px;
+            }
+
+            .logo h1 {
+                font-size: 25px;
+
+                letter-spacing: 3px;
+            }
+
+            .symbol {
+                font-size: 30px;
+            }
+
+            .form-group input {
+                height: 48px;
+            }
+
+            .login-button {
+                height: 48px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="login-container">
+
+        <div class="logo">
+
+            <div class="symbol">
+                ♱
+            </div>
+
+            <h1>
+                Zaya's<br>
+                Torment
+            </h1>
+
+            <p>
+                Biblioteca Virtual
+            </p>
+
+        </div>
+
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label for="name">
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Digite seu nome completo"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="seunome@email.com"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="password">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Digite sua senha"
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-button">
+
+                ENTRAR
+
+            </button>
+
+
+        </form>
+
+        <div id="mensagem"></div>
+
+        <div class="divider">
+
+            BIBLIOTECA VIRTUAL
+        </div>
+
+
+
+        <footer>
+
+            © 2026 Biblioteca Virtual
+
+        </footer>
+
+
+    </main>
+
+
+    <script>
+
+        const form =
+            document.getElementById("loginForm");
+
+
+        form.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                const name =
+                    document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+
+                const email =
+                    document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+
+                const password =
+                    document
+                    .getElementById("password")
+                    .value;
+
+
+                const mensagem =
+                    document.getElementById("mensagem");
+
+
+            
+
+                if (name === "") {
+
+                    mensagem.style.color = "#cc5555";
+
+                    mensagem.innerHTML =
+                        "Digite seu nome completo.";
+
+                    return;
+
+                }
+
+
+                const nameParts =
+                    name.split(/\s+/);
+
+
+                if (nameParts.length < 2) {
+
+                    mensagem.style.color = "#cc5555";
+
+                    mensagem.innerHTML =
+                        "Digite seu nome completo, com nome e sobrenome.";
+
+                    return;
+
+                }
+
+
+                
+
+                const emailRegex =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (!emailRegex.test(email)) {
+
+                    mensagem.style.color = "#cc5555";
+
+                    mensagem.innerHTML =
+                        "Digite um e-mail válido.";
+
+                    return;
+
+                }
+
+
+                
+                if (password.length < 6) {
+
+                    mensagem.style.color = "#cc5555";
+
+                    mensagem.innerHTML =
+                        "A senha deve ter no mínimo 6 caracteres.";
+
+                    return;
+
+                }
+
+
+                mensagem.style.color = "#8f8f8f";
+
+                mensagem.innerHTML =
+                    "Login realizado com sucesso!";
+
+
+
+
+                setTimeout(function() {
+
+                    window.location.href =
+                        "painel.html";
+
+                }, 1000);
+
+            }
+            
+        );
+
+    </script>
+
+
+</body>
+
+</html>
