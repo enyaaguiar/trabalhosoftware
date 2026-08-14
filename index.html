@@ -7,9 +7,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Zaya's Torment - Login</title>
+    <title>Zaya's Torment - Login</title>
 
     <style>
+
+
         * {
             margin: 0;
             padding: 0;
@@ -38,8 +40,8 @@
         }
 
 
-
         .login-container {
+
             width: 100%;
             max-width: 430px;
 
@@ -50,23 +52,28 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
 
+        }
 
 
         .logo {
+
             text-align: center;
 
             margin-bottom: 40px;
+
         }
 
         .symbol {
+
             font-size: 34px;
 
             margin-bottom: 15px;
+
         }
 
         .logo h1 {
+
             font-size: 28px;
 
             font-weight: normal;
@@ -76,9 +83,11 @@
             line-height: 1.2;
 
             text-transform: uppercase;
+
         }
 
         .logo p {
+
             margin-top: 12px;
 
             color: #888888;
@@ -90,16 +99,21 @@
             letter-spacing: 3px;
 
             text-transform: uppercase;
+
         }
+
 
 
         .form-group {
+
             width: 100%;
 
             margin-bottom: 20px;
+
         }
 
         .form-group label {
+
             display: block;
 
             margin-bottom: 8px;
@@ -109,9 +123,11 @@
             font-family: Arial, sans-serif;
 
             font-size: 13px;
+
         }
 
         .form-group input {
+
             width: 100%;
 
             height: 50px;
@@ -133,18 +149,25 @@
             outline: none;
 
             transition: border-color 0.2s;
+
         }
 
         .form-group input:focus {
+
             border-color: #aaaaaa;
+
         }
 
         .form-group input::placeholder {
+
             color: #666666;
+
         }
 
 
+
         .login-button {
+
             width: 100%;
 
             height: 50px;
@@ -168,18 +191,25 @@
             cursor: pointer;
 
             transition: 0.2s;
+
         }
 
         .login-button:hover {
+
             background-color: #cccccc;
+
         }
 
         .login-button:active {
+
             transform: scale(0.98);
+
         }
 
 
+
         #mensagem {
+
             margin-top: 20px;
 
             text-align: center;
@@ -189,10 +219,12 @@
             font-size: 13px;
 
             min-height: 18px;
+
         }
 
 
         .divider {
+
             display: flex;
 
             align-items: center;
@@ -206,10 +238,12 @@
             font-family: Arial, sans-serif;
 
             font-size: 11px;
+
         }
 
         .divider::before,
         .divider::after {
+
             content: "";
 
             flex: 1;
@@ -217,10 +251,12 @@
             height: 1px;
 
             background-color: #292929;
+
         }
 
 
         footer {
+
             text-align: center;
 
             color: #666666;
@@ -228,16 +264,20 @@
             font-family: Arial, sans-serif;
 
             font-size: 12px;
+
         }
 
 
         @media (min-width: 600px) {
 
             body {
+
                 background-color: #111111;
+
             }
 
             .login-container {
+
                 min-height: auto;
 
                 background-color: #000000;
@@ -251,6 +291,7 @@
                 box-shadow:
                     0 15px 40px
                     rgba(0, 0, 0, 0.5);
+
             }
 
         }
@@ -259,37 +300,51 @@
         @media (max-width: 599px) {
 
             body {
+
                 padding: 0;
+
             }
 
             .login-container {
+
                 width: 100%;
 
                 min-height: 100vh;
 
                 padding: 35px 25px;
+
             }
 
             .logo {
+
                 margin-bottom: 35px;
+
             }
 
             .logo h1 {
+
                 font-size: 25px;
 
                 letter-spacing: 3px;
+
             }
 
             .symbol {
+
                 font-size: 30px;
+
             }
 
             .form-group input {
+
                 height: 48px;
+
             }
 
             .login-button {
+
                 height: 48px;
+
             }
 
         }
@@ -303,6 +358,9 @@
 
 
     <main class="login-container">
+
+
+    
 
         <div class="logo">
 
@@ -322,7 +380,12 @@
         </div>
 
 
+
+
         <form id="loginForm">
+
+
+        
 
             <div class="form-group">
 
@@ -335,10 +398,13 @@
                     id="name"
                     name="name"
                     placeholder="Digite seu nome completo"
+                    required
                 >
 
             </div>
 
+
+       
 
             <div class="form-group">
 
@@ -351,10 +417,13 @@
                     id="email"
                     name="email"
                     placeholder="seunome@email.com"
+                    required
                 >
 
             </div>
 
+
+        
             <div class="form-group">
 
                 <label for="password">
@@ -366,11 +435,14 @@
                     id="password"
                     name="password"
                     placeholder="Digite sua senha"
+                    minlength="6"
+                    required
                 >
 
             </div>
 
 
+         
             <button
                 type="submit"
                 class="login-button">
@@ -382,14 +454,22 @@
 
         </form>
 
+
+       
+
         <div id="mensagem"></div>
+
+
+        
 
         <div class="divider">
 
             BIBLIOTECA VIRTUAL
+
         </div>
 
 
+        
 
         <footer>
 
@@ -400,6 +480,8 @@
 
     </main>
 
+
+  
 
     <script>
 
@@ -413,12 +495,13 @@
 
                 event.preventDefault();
 
+
+
                 const name =
                     document
                     .getElementById("name")
                     .value
                     .trim();
-
 
                 const email =
                     document
@@ -426,24 +509,24 @@
                     .value
                     .trim();
 
-
                 const password =
                     document
                     .getElementById("password")
                     .value;
 
-
                 const mensagem =
-                    document.getElementById("mensagem");
+                    document
+                    .getElementById("mensagem");
 
 
-            
+               
 
                 if (name === "") {
 
-                    mensagem.style.color = "#cc5555";
+                    mensagem.style.color =
+                        "#cc5555";
 
-                    mensagem.innerHTML =
+                    mensagem.textContent =
                         "Digite seu nome completo.";
 
                     return;
@@ -451,15 +534,18 @@
                 }
 
 
+               
+
                 const nameParts =
                     name.split(/\s+/);
 
 
                 if (nameParts.length < 2) {
 
-                    mensagem.style.color = "#cc5555";
+                    mensagem.style.color =
+                        "#cc5555";
 
-                    mensagem.innerHTML =
+                    mensagem.textContent =
                         "Digite seu nome completo, com nome e sobrenome.";
 
                     return;
@@ -467,17 +553,59 @@
                 }
 
 
-                
+                /* =========================
+   VALIDAR E-MAIL
+========================= */
 
-                const emailRegex =
-                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (email === "") {
+
+    mensagem.style.color = "#cc5555";
+
+    mensagem.textContent =
+        "Digite seu e-mail.";
+
+    return;
+
+}
 
 
-                if (!emailRegex.test(email)) {
 
-                    mensagem.style.color = "#cc5555";
 
-                    mensagem.innerHTML =
+const emailRegex =
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+
+if (!emailRegex.test(email)) {
+
+    mensagem.style.color = "#cc5555";
+
+    mensagem.textContent =
+        "Digite um e-mail válido.";
+
+    return;
+
+}
+
+
+            
+
+                const arroba =
+                    email.indexOf("@");
+
+                const ponto =
+                    email.lastIndexOf(".");
+
+
+                if (
+                    arroba < 1 ||
+                    ponto < arroba + 2 ||
+                    ponto === email.length - 1
+                ) {
+
+                    mensagem.style.color =
+                        "#cc5555";
+
+                    mensagem.textContent =
                         "Digite um e-mail válido.";
 
                     return;
@@ -485,12 +613,25 @@
                 }
 
 
-                
+                if (password === "") {
+
+                    mensagem.style.color =
+                        "#cc5555";
+
+                    mensagem.textContent =
+                        "Digite sua senha.";
+
+                    return;
+
+                }
+
+
                 if (password.length < 6) {
 
-                    mensagem.style.color = "#cc5555";
+                    mensagem.style.color =
+                        "#cc5555";
 
-                    mensagem.innerHTML =
+                    mensagem.textContent =
                         "A senha deve ter no mínimo 6 caracteres.";
 
                     return;
@@ -498,23 +639,22 @@
                 }
 
 
-                mensagem.style.color = "#8f8f8f";
 
-                mensagem.innerHTML =
+                mensagem.style.color =
+                    "#8f8f8f";
+
+                mensagem.textContent =
                     "Login realizado com sucesso!";
-
-
 
 
                 setTimeout(function() {
 
                     window.location.href =
-                        "painel.html";
+                        "./painel.html";
 
                 }, 1000);
 
             }
-            
         );
 
     </script>
